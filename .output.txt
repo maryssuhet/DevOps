@@ -1,0 +1,215 @@
+Collecting black
+  Downloading black-26.3.1-cp314-cp314-macosx_11_0_arm64.whl.metadata (91 kB)
+Collecting flake8
+  Downloading flake8-7.3.0-py2.py3-none-any.whl.metadata (3.8 kB)
+Requirement already satisfied: click>=8.0.0 in ./.venv/lib/python3.14/site-packages (from black) (8.3.2)
+Collecting mypy-extensions>=0.4.3 (from black)
+  Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)
+Requirement already satisfied: packaging>=22.0 in ./.venv/lib/python3.14/site-packages (from black) (26.0)
+Collecting pathspec>=1.0.0 (from black)
+  Downloading pathspec-1.0.4-py3-none-any.whl.metadata (13 kB)
+Collecting platformdirs>=2 (from black)
+  Downloading platformdirs-4.9.4-py3-none-any.whl.metadata (4.7 kB)
+Collecting pytokens~=0.4.0 (from black)
+  Downloading pytokens-0.4.1-cp314-cp314-macosx_11_0_arm64.whl.metadata (3.8 kB)
+Collecting mccabe<0.8.0,>=0.7.0 (from flake8)
+  Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+Collecting pycodestyle<2.15.0,>=2.14.0 (from flake8)
+  Downloading pycodestyle-2.14.0-py2.py3-none-any.whl.metadata (4.5 kB)
+Collecting pyflakes<3.5.0,>=3.4.0 (from flake8)
+  Downloading pyflakes-3.4.0-py2.py3-none-any.whl.metadata (3.5 kB)
+Downloading black-26.3.1-cp314-cp314-macosx_11_0_arm64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 41.4 MB/s eta 0:00:00
+Downloading pytokens-0.4.1-cp314-cp314-macosx_11_0_arm64.whl (160 kB)
+Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Downloading pathspec-1.0.4-py3-none-any.whl (55 kB)
+Downloading platformdirs-4.9.4-py3-none-any.whl (21 kB)
+Installing collected packages: pytokens, pyflakes, pycodestyle, platformdirs, pathspec, mypy-extensions, mccabe, flake8, black
+Successfully installed black-26.3.1 flake8-7.3.0 mccabe-0.7.0 mypy-extensions-1.1.0 pathspec-1.0.4 platformdirs-4.9.4 pycodestyle-2.14.0 pyflakes-3.4.0 pytokens-0.4.1
+[notice] A new release of pip is available: 25.1.1 -> 26.0.1
+[notice] To update, run: pip install --upgrade pip
+reformatted /Users/marysuhet/Documents/GitHub/DevOps/test_main.py
+reformatted /Users/marysuhet/Documents/GitHub/DevOps/main.py
+All done! ✨ 🍰 ✨
+2 files reformatted.
+./.venv/lib/python3.14/site-packages/blib2to3/pgen2/tokenize.py:64:1: F822 undefined name 'generate_tokens' in __all__
+__all__ = [x for x in dir(_token) if x[0] != "_"] + [
+^
+./.venv/lib/python3.14/site-packages/blib2to3/pgen2/tokenize.py:64:1: F822 undefined name 'untokenize' in __all__
+__all__ = [x for x in dir(_token) if x[0] != "_"] + [
+^
+./.venv/lib/python3.14/site-packages/pip/_vendor/distlib/compat.py:21:20: F821 undefined name 'basestring'
+    string_types = basestring,
+                   ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/distlib/compat.py:22:17: F821 undefined name 'unicode'
+    text_type = unicode
+                ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/distlib/compat.py:31:26: F821 undefined name 'unicode'
+        if isinstance(s, unicode):
+                         ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/distlib/compat.py:46:17: F821 undefined name 'raw_input'
+    raw_input = raw_input
+                ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/distlib/compat.py:504:37: F821 undefined name 'get_ident'
+                    key = id(self), get_ident()
+                                    ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/pygments/lexer.py:229:27: F821 undefined name 'chardet'
+                    enc = chardet.detect(text[:1024])  # Guess using first 1KB
+                          ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/rich/console.py:523:15: F821 undefined name 'get_ipython'
+    ipython = get_ipython()  # type: ignore[name-defined]
+              ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/rich/traceback.py:201:14: F821 undefined name 'get_ipython'
+        ip = get_ipython()  # type: ignore[name-defined]
+             ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:49:21: F821 undefined name 'basestring'
+    string_types = (basestring,)
+                    ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:50:27: F821 undefined name 'long'
+    integer_types = (int, long)
+                          ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:52:17: F821 undefined name 'unicode'
+    text_type = unicode
+                ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:722:16: F821 undefined name 'unicode'
+        return unicode(s.replace(r"\\", r"\\\\"), "unicode_escape")
+               ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:824:37: F821 undefined name 'basestring'
+            if not isinstance(data, basestring):
+                                    ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:828:32: F821 undefined name 'file'
+                isinstance(fp, file)
+                               ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:829:38: F821 undefined name 'unicode'
+                and isinstance(data, unicode)
+                                     ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:841:32: F821 undefined name 'unicode'
+            if isinstance(sep, unicode):
+                               ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:847:32: F821 undefined name 'unicode'
+            if isinstance(end, unicode):
+                               ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:855:36: F821 undefined name 'unicode'
+                if isinstance(arg, unicode):
+                                   ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:859:23: F821 undefined name 'unicode'
+            newline = unicode("\n")
+                      ^
+./.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/packages/six.py:860:21: F821 undefined name 'unicode'
+            space = unicode(" ")
+                    ^
+./.venv/lib/python3.14/site-packages/rich/console.py:517:15: F821 undefined name 'get_ipython'
+    ipython = get_ipython()  # type: ignore[name-defined]
+              ^
+./.venv/lib/python3.14/site-packages/rich/traceback.py:211:14: F821 undefined name 'get_ipython'
+        ip = get_ipython()  # type: ignore[name-defined]
+             ^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'AbstractSet' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'AnyStr' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'BinaryIO' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Callable' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Collection' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Container' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Dict' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'FrozenSet' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Hashable' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'IO' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'ItemsView' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Iterable' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Iterator' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'KeysView' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'List' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Mapping' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'MappingView' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Match' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'MutableMapping' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'MutableSequence' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'MutableSet' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Optional' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Pattern' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Reversible' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Sequence' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Set' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Sized' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'TextIO' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Tuple' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'Union' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'ValuesView' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'cast' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'no_type_check' in __all__
+__all__ = [
+^
+./.venv/lib/python3.14/site-packages/typing_extensions.py:21:1: F822 undefined name 'no_type_check_decorator' in __all__
+__all__ = [
+^
+22    F821 undefined name 'basestring'
+36    F822 undefined name 'generate_tokens' in __all__
+58

@@ -2,12 +2,29 @@ name: FastAPI CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "feat/*" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - name: Install Linting Tools
+      run: |
+        pip install flake8 black
+    - name: Run Black (Check Formatting)
+      run: black --check .
+    - name: Run Flake8 (Check Style)
+      run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
   test:
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
@@ -17,7 +34,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
@@ -26,7 +43,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        pip install pytest httpx
         pytest test_main.py
 
   deploy:
@@ -47,4 +63,6 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/minha-app-fastapi:latest
+        tags: |
+          ${{ secrets.DOCKERHUB_USERNAME }}/minha-app-fastapi:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/minha-app-fastapi:${{ github.sha }}
