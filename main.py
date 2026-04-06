@@ -45,3 +45,12 @@ async def update_task_status(task_id: int, completed: bool):
             task.completed = completed
             return task
     raise HTTPException(status_code=404, detail="Tarefa não encontrada")
+
+@app.delete("/tasks/{task_id}", status_code=204)
+async def delete_task(task_id: int):
+    global tasks_db
+    new_db = [task for task in tasks_db if task.id != task_id]
+    if len(new_db) == len(tasks_db):
+        raise HTTPException(status_code=404, detail="Tarefa não encontrada")
+    tasks_db = new_db
+    return None
