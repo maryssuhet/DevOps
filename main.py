@@ -37,3 +37,11 @@ async def create_task(task: Task):
     tasks_db.append(task)
     task_counter = max(task_counter, task.id) + 1
     return task
+
+@app.put("/tasks/{task_id}", response_model=Task)
+async def update_task_status(task_id: int, completed: bool):
+    for task in tasks_db:
+        if task.id == task_id:
+            task.completed = completed
+            return task
+    raise HTTPException(status_code=404, detail="Tarefa não encontrada")
