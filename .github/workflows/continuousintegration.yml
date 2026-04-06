@@ -45,8 +45,20 @@ jobs:
       run: |
         pytest test_main.py
 
+  docker-test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build Docker Image for Testing
+      run: |
+        docker build -t test-app .
+    - name: Run Tests inside Docker Container
+      run: |
+        docker run --rm test-app pytest test_main.py
+
   deploy:
-    needs: test
+    needs: [test, docker-test]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
