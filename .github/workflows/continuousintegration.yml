@@ -87,13 +87,13 @@ jobs:
       - name: Send Discord Notification
         uses: appleboy/discord-action@master
         with:
-          webhook_id: ${{ secrets.DISCORD_WEBHOOK_ID }}
-          webhook_token: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
           message: |
-            **Workflow: ${{ github.workflow }}**
+            🚀 **Novo evento no repositório!**
+            **Workflow:** ${{ github.workflow }}
             **Status:** ${{ (needs.lint.result == 'success' && needs.test.result == 'success' && needs.docker-test.result == 'success' && (needs.deploy.result == 'success' || needs.deploy.result == 'skipped')) && '✅ Sucesso' || '❌ Falha' }}
-            **Evento:** ${{ github.event_name }}
-            **Branch:** ${{ github.ref_name }}
-            **Commit:** ${{ github.sha }}
-            **Autor:** ${{ github.actor }}
-            Veja os detalhes em: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            📦 **Repositório:** ${{ github.repository }}
+            🌿 **Branch:** ${{ github.ref_name }}
+            👤 **Autor:** ${{ github.actor }}
+            💬 **Commit:** ${{ github.event.head_commit.message }}
+            🔗 **Link:** https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

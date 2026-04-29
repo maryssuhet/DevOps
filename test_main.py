@@ -45,3 +45,15 @@ def test_delete_task():
     response = client.get("/tasks")
     tasks = response.json()
     assert all(task["id"] != 1 for task in tasks)
+
+
+def test_health_check():
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "healthy"}
+
+
+def test_update_task_not_found():
+    response = client.put("/tasks/999?completed=true")
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Tarefa não encontrada"
