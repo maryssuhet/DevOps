@@ -10,6 +10,7 @@ def limpar_banco():
     """Limpa o banco de dados antes de cada teste."""
     tasks_db.clear()
     import main
+
     main.task_counter = 1
     yield
     tasks_db.clear()
@@ -37,7 +38,7 @@ def test_criar_tarefa():
         "id": 1,
         "title": "Tarefa de teste",
         "description": "Descrição da tarefa",
-        "completed": False
+        "completed": False,
     }
     response = client.post("/tasks", json=payload)
     assert response.status_code == 201
